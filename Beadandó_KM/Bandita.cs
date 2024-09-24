@@ -11,12 +11,14 @@ namespace Beadandó_KM
         public string nev;
         public int hp;
         public int sebzes;
+        public int rogok;
 
-        public Bandita(string nev, int hp, int sebzes) : base(nev, hp, sebzes)
+        public Bandita(string nev, int hp, int sebzes, int rogok) : base(nev, hp, sebzes)
         {
             this.nev = nev;
             this.hp = hp;
             this.sebzes = sebzes;
+            this.rogok = rogok;
         }
     }
 }

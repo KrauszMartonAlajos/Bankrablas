@@ -5,3 +5,10 @@ H:\AAf\Beadandó_KM\Beadandó_KM\obj\Debug\Beadandó_KM.csproj.AssemblyReference
 H:\AAf\Beadandó_KM\Beadandó_KM\obj\Debug\Beadandó_KM.csproj.CoreCompileInputs.cache
 H:\AAf\Beadandó_KM\Beadandó_KM\obj\Debug\Beadandó_KM.exe
 H:\AAf\Beadandó_KM\Beadandó_KM\obj\Debug\Beadandó_KM.pdb
+H:\AAf\Beadandó_KM\git\Bankrablas\Beadandó_KM\bin\Debug\Beadandó_KM.exe.config
+H:\AAf\Beadandó_KM\git\Bankrablas\Beadandó_KM\bin\Debug\Beadandó_KM.exe
+H:\AAf\Beadandó_KM\git\Bankrablas\Beadandó_KM\bin\Debug\Beadandó_KM.pdb
+H:\AAf\Beadandó_KM\git\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.csproj.AssemblyReference.cache
+H:\AAf\Beadandó_KM\git\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.csproj.CoreCompileInputs.cache
+H:\AAf\Beadandó_KM\git\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.exe
+H:\AAf\Beadandó_KM\git\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.pdb

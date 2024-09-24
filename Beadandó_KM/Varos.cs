@@ -14,8 +14,16 @@ namespace Beadandó_KM
         public List<List<VarosElem>> palya;
         public int x;
         public int y;
+        public int felszedettRogok = 0;
+        int[,] iranyok = new int[,] { { 0 , 1 },   // fel
+                                      { 0 , -1 },  // le
+                                      { -1 , 0 },  // bal
+                                      { 1 , 0 },   // jobb
+                                      { -1 , 1 },  // bal-fel
+                                      { 1 , 1 },   // jobb-fel
+                                      { -1 , -1 }, // bal-le
+                                      { 1 , -1 }}; //jobb-le
 
-        public Sheriff kapott_lovag;
 
         public Varos(int rows, int cols)
         {
@@ -47,7 +55,8 @@ namespace Beadandó_KM
         {
             int lerakottbarrikadok = 0;
             Random r = new Random();
-            while (lerakottbarrikadok != 15)
+            int randomBarikadDB = r.Next(25, 51);
+            while (lerakottbarrikadok != randomBarikadDB)
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -90,7 +99,7 @@ namespace Beadandó_KM
 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    palya[Xgen][Ygen] = new Bandita("B", 100, 1);
+                    palya[Xgen][Ygen] = new Bandita("B", 100, 1,0);
                     lerakottbanditak++;
                 }
             }
@@ -179,6 +188,35 @@ namespace Beadandó_KM
             return 0;
         }
 
+        public void banditalep()
+        {
+            Random r = new Random();
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Bandita)
+                    {
+                        Bandita leptetendo = (Bandita)palya[i][j];
+                        palya[i][j] = new Fold("F", 1, 1);
+
+                        int index = r.Next(0, 8);
+                        int iranyI = i + iranyok[index, 0];
+                        int iranyJ = j + iranyok[index, 1];
+
+                        if (iranyI >= 0 && iranyI < palya.Count && iranyJ >= 0 && iranyJ < palya[i].Count)
+                        {
+                            palya[iranyI][iranyJ] = leptetendo;
+                        }
+                        else
+                        {
+                            banditalep();
+                        }
+                    }
+                }
+            }
+        }
+
         public void szimulal(Sheriff s)
         {
             Console.Clear();
@@ -230,6 +268,9 @@ namespace Beadandó_KM
             }
 
             Console.WriteLine(s.ToString());
+            Console.WriteLine("Felszedett aranyrögök száma: "+felszedettRogok);
+            Console.WriteLine("Sheriff az piros");
+            Console.WriteLine("Városháza az kék");
         }
     }
 }

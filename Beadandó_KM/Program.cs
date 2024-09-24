@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Beadandó_KM
@@ -21,6 +22,22 @@ namespace Beadandó_KM
             palya.varoshazalerak(); //jo
             palya.whiskeygeneral(); //jo
             palya.banditageneral(); //jo
+            palya.szimulal(MatyiZok);
+            palya.szimulal(MatyiZok);
+            Thread.Sleep(2000); // Block for 2 seconds
+            palya.banditalep();
+
+            palya.szimulal(MatyiZok);
+            Thread.Sleep(2000); // Block for 2 seconds
+            palya.banditalep();
+
+            Thread.Sleep(2000); // Block for 2 seconds
+            palya.szimulal(MatyiZok);
+
+            Thread.Sleep(2000); // Block for 2 seconds
+            palya.banditalep();
+
+            Thread.Sleep(2000); // Block for 2 seconds
             palya.szimulal(MatyiZok);
 
             Console.ReadKey();
