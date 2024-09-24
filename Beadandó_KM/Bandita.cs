@@ -12,7 +12,7 @@ namespace Beadandó_KM
         public int hp;
         public int sebzes;
         public int rogok;
-
+        
         public Bandita(string nev, int hp, int sebzes, int rogok) : base(nev, hp, sebzes)
         {
             this.nev = nev;
@@ -20,5 +20,11 @@ namespace Beadandó_KM
             this.sebzes = sebzes;
             this.rogok = rogok;
         }
+        //public List<List<VarosElem>> lepes(List<List<VarosElem>> palya)
+        //{
+
+
+        //    return null;
+        //}
     }
 }

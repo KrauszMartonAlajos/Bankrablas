@@ -23,23 +23,14 @@ namespace Beadandó_KM
             palya.whiskeygeneral(); //jo
             palya.banditageneral(); //jo
             palya.szimulal(MatyiZok);
-            palya.szimulal(MatyiZok);
-            Thread.Sleep(2000); // Block for 2 seconds
-            palya.banditalep();
 
-            palya.szimulal(MatyiZok);
-            Thread.Sleep(2000); // Block for 2 seconds
-            palya.banditalep();
+            while (true)
+            {
+                palya.banditalep();
 
-            Thread.Sleep(2000); // Block for 2 seconds
-            palya.szimulal(MatyiZok);
-
-            Thread.Sleep(2000); // Block for 2 seconds
-            palya.banditalep();
-
-            Thread.Sleep(2000); // Block for 2 seconds
-            palya.szimulal(MatyiZok);
-
+                Thread.Sleep(2000); // Block for 2 seconds
+                palya.szimulal(MatyiZok);
+            }
             Console.ReadKey();
         }
     }
