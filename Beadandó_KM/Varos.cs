@@ -116,8 +116,24 @@ namespace Beadandó_KM
 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    palya[Xgen][Ygen] = new Bandita("B", 100, 1,0);
+                    Bandita bandita = new Bandita("B", 100, 1, 0,Xgen,Ygen);
+                    palya[Xgen][Ygen] = bandita;
                     lerakottbanditak++;
+                }
+            }
+        }
+
+        public void banditaleptet()
+        {
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Bandita)
+                    {
+                        Bandita b = (Bandita)palya[i][j];
+                        b.banditalep(ref palya);
+                    }
                 }
             }
         }
@@ -204,52 +220,6 @@ namespace Beadandó_KM
             // -1 == > sheriff meghalt
             return 0;
         }
-
-        public void banditalep()
-        {
-            Random r = new Random();
-
-            for (int i = 0; i < palya.Count; i++)
-            {
-                for (int j = 0; j < palya[i].Count; j++)
-                {
-                    if (palya[i][j] is Bandita)
-                    {
-                        Bandita leptetendo = (Bandita)palya[i][j];
-                        palya[i][j] = new Fold("F", 1, 1);
-
-                        bool validStep = false;
-
-                        while (!validStep)
-                        {
-                            // Generate random direction
-                            int index = r.Next(0, 8);
-                            int iranyI = i + iranyok[index, 0];
-                            int iranyJ = j + iranyok[index, 1];
-
-                            // Check if the new position is within bounds
-                            if (iranyI >= 0 && iranyI < palya.Count && iranyJ >= 0 && iranyJ < palya[iranyI].Count)
-                            {
-                                // Handle valid movement cases
-                                if (palya[iranyI][iranyJ] is Fold)
-                                {
-                                    palya[iranyI][iranyJ] = leptetendo;
-                                    validStep = true; // Valid move, exit loop
-                                }
-                                else if (palya[iranyI][iranyJ] is Aranyrog)
-                                {
-                                    palya[iranyI][iranyJ] = leptetendo;
-                                    leptetendo.rogok += 1;
-                                    validStep = true; // Valid move, exit loop
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-
         public void szimulal(Sheriff s)
         {
             Console.Clear();

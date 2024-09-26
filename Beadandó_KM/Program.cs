@@ -26,9 +26,9 @@ namespace Beadandó_KM
 
             while (true)
             {
-                palya.banditalep();
 
-                Thread.Sleep(2000); // Block for 2 seconds
+                palya.banditaleptet();
+                Thread.Sleep(2000); 
                 palya.szimulal(MatyiZok);
             }
             Console.ReadKey();
