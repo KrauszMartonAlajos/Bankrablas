@@ -124,7 +124,17 @@ namespace Beadandó_KM
         }
 
         public void banditaleptet()
-        {
+        {           
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Bandita)
+                    {
+                        ((Bandita)palya[i][j]).mozdult = false;
+                    }
+                }
+            }
             for (int i = 0; i < palya.Count; i++)
             {
                 for (int j = 0; j < palya[i].Count; j++)
@@ -195,11 +205,6 @@ namespace Beadandó_KM
             }
         }
 
-        public void pmeret()
-        {
-            Console.WriteLine(palya.Count());
-            Console.WriteLine(palya[0].Count());
-        }
 
         public bool tavolvane(int x, int y)
         {
@@ -232,6 +237,7 @@ namespace Beadandó_KM
         public void szimulal(Sheriff s)
         {
             Console.Clear();
+            Console.WriteLine("\x1b[3J");
             for (int i = 0; i < palya.Count; i++)
             {
                 for (int j = 0; j < palya[i].Count; j++)
@@ -281,10 +287,7 @@ namespace Beadandó_KM
 
             Console.WriteLine(s.ToString());
             Console.WriteLine("Felszedett aranyrögök száma: "+felszedettRogok);
-            Console.WriteLine("Sheriff az piros");
-            Console.WriteLine("Városháza az kék");
-            Console.WriteLine("Banditáknál lévő rögök száma: ");
-            Console.Write(banditaknalLevoRogokSzama());
+            Console.WriteLine("Banditáknál lévő rögök száma: "+ banditaknalLevoRogokSzama());
         }
     }
 }

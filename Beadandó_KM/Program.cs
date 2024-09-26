@@ -22,13 +22,15 @@ namespace Beadandó_KM
             palya.varoshazalerak(); //jo
             palya.whiskeygeneral(); //jo
             palya.banditageneral(); //jo
-
+            int futasokszama = 0;
             while (true)
             {
 
-                palya.banditaleptet();
-                Thread.Sleep(2000); 
+                futasokszama++;
                 palya.szimulal(MatyiZok);
+                palya.banditaleptet();
+                Console.WriteLine("Futások száma: "+futasokszama);
+                Thread.Sleep(2000); 
             }
             Console.ReadKey();
         }
