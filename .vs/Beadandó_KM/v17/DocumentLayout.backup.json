@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|h:\\aaf\\beadand\u00F3_km\\git\\bankrablas\\beadand\u00F3_km\\varos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\varos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\bandita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|h:\\aaf\\beadand\u00F3_km\\git\\bankrablas\\beadand\u00F3_km\\bandita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\bandita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\varos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\varos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\varoselem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\varoselem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|Beadand\u00F3_KM||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
@@ -29,7 +29,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -44,7 +44,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Program.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Program.cs",
@@ -52,30 +52,29 @@
               "RelativeToolTip": "Beadand\u00F3_KM\\Program.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAuwB0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T07:33:55.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T07:33:55.76Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "VarosElem.cs",
               "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\VarosElem.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\VarosElem.cs",
               "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\VarosElem.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\VarosElem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T07:29:23.357Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Bandita.cs",
               "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Bandita.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Bandita.cs",
               "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Bandita.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Bandita.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBcAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAuwCIAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T07:10:05.252Z",
               "EditorCaption": ""
@@ -88,7 +87,7 @@
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Varos.cs",
               "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Varos.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Varos.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAswIUAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAmwIYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T07:05:36.999Z",
               "EditorCaption": ""

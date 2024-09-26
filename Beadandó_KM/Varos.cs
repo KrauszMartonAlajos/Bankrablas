@@ -132,7 +132,7 @@ namespace Beadandó_KM
                     if (palya[i][j] is Bandita)
                     {
                         Bandita b = (Bandita)palya[i][j];
-                        b.banditalep(ref palya);
+                        b.furkesz(ref palya);
                     }
                 }
             }

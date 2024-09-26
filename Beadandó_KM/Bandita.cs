@@ -26,12 +26,26 @@ namespace Beadandó_KM
         List<List<VarosElem>> mitlat = new List<List<VarosElem>>();
         public void furkesz(ref List<List<VarosElem>> palya)
         {
+            //át kell írni 3*3masra
+
+            mitlat.Clear();
             //kapjon vissza egy n*n es VárosElem mátrixot ami megfelel a látőkörének az adott mezőről és abban hozzon döntést hogy merre lép
             //marad a simán vissza adott koordináta de nem lesz teljesen random hanem így már "okosan" lép
-            //mitlat = valami
+            for (int i = Math.Max(0, x - 3); i < Math.Min(palya.Count, x + 3); i++)
+            {
+                List<VarosElem> temp = new List<VarosElem>();
+                for (int j = Math.Max(0, y - 3); j < Math.Min(palya[i].Count, y + 3); j++)
+                {
+                    temp.Add(palya[i][j]);
+                }
+                mitlat.Add(temp);
+            }
+            Console.WriteLine();
+            Console.WriteLine("X: " + x + " Y: " + y);
+            Console.WriteLine(mitlat.Count()*mitlat[0].Count());
         }
 
-        
+
 
         public void banditalep()
         {
