@@ -15,14 +15,13 @@ namespace Beadandó_KM
 
             palya.palyaFeltolt();
             Random r = new Random();
-            Sheriff MatyiZok = new Sheriff("S", 100, r.Next(20,36));
+            Sheriff MatyiZok = new Sheriff("S", 100, r.Next(20,36),0,0);
             palya.barrikadgeneral(); //jo
             palya.aranyroggeneral(); //jo
             palya.sherifflerak(MatyiZok);//jo
             palya.varoshazalerak(); //jo
             palya.whiskeygeneral(); //jo
             palya.banditageneral(); //jo
-            palya.szimulal(MatyiZok);
 
             while (true)
             {

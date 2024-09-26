@@ -11,12 +11,15 @@ namespace Beadandó_KM
         public string nev;
         public int hp;
         public int sebzes;
+        public int x, y;
 
-        public Varoshaza(string nev, int hp, int sebzes) : base(nev, hp, sebzes)
+        public Varoshaza(string nev, int hp, int sebzes, int x, int y) : base(nev, hp, sebzes,x,y)
         {
             this.nev = nev;
             this.hp = hp;
             this.sebzes = sebzes;
+            this.x = x;
+            this.y = y;
         }
     }
 }

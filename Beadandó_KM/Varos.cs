@@ -46,7 +46,7 @@ namespace Beadandó_KM
             {
                 for (int j = 0; j < palya[i].Count; j++)
                 {
-                    palya[i][j] = new Fold("F", 1, 1);
+                    palya[i][j] = new Fold("F", 1, 1,i,j);
                 }
             }
         }
@@ -62,7 +62,7 @@ namespace Beadandó_KM
                 int Ygen = r.Next(0, y);
                 if (!(palya[Xgen][Ygen] is Barrikad))
                 {
-                    palya[Xgen][Ygen] = new Barrikad("X", 1, 1);
+                    palya[Xgen][Ygen] = new Barrikad("X", 1, 1, Xgen, Ygen);
                     lerakottbarrikadok++;
                 }
             }
@@ -98,7 +98,7 @@ namespace Beadandó_KM
 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    palya[Xgen][Ygen] = new Aranyrog("A", 1, 1);
+                    palya[Xgen][Ygen] = new Aranyrog("A", 1, 1, Xgen, Ygen);
                     lerakottrogok++;
                 }
             }
@@ -133,6 +133,7 @@ namespace Beadandó_KM
                     {
                         Bandita b = (Bandita)palya[i][j];
                         b.furkesz(ref palya);
+                        b.banditalep(ref palya);
                     }
                 }
             }
@@ -150,7 +151,7 @@ namespace Beadandó_KM
 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    palya[Xgen][Ygen] = new Whiskey("W", 50, 1);
+                    palya[Xgen][Ygen] = new Whiskey("W", 50, 1,Xgen,Ygen);
                     lerakottwhiskey++;
                 }
             }
@@ -169,6 +170,8 @@ namespace Beadandó_KM
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
                     palya[Xgen][Ygen] = s;
+                    s.x = Xgen;
+                    s.y = Ygen;
                     lerakottseriff++;
                 }
             }
@@ -186,10 +189,16 @@ namespace Beadandó_KM
 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    palya[Xgen][Ygen] = new Varoshaza("H", 1, 1);
+                    palya[Xgen][Ygen] = new Varoshaza("H", 1, 1,Xgen,Ygen);
                     lerakottvaroshaza++;
                 }
             }
+        }
+
+        public void pmeret()
+        {
+            Console.WriteLine(palya.Count());
+            Console.WriteLine(palya[0].Count());
         }
 
         public bool tavolvane(int x, int y)
