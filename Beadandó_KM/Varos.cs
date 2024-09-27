@@ -110,7 +110,7 @@ namespace Beadandó_KM
             int lerakottbanditak = 0;
             Random r = new Random();
 
-            while (lerakottbanditak != 4)
+            while (lerakottbanditak != 15)
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -120,6 +120,21 @@ namespace Beadandó_KM
                     Bandita bandita = new Bandita("B", 100, 1, 0,Xgen,Ygen);
                     palya[Xgen][Ygen] = bandita;
                     lerakottbanditak++;
+                }
+            }
+        }
+
+        public void seriffKeres()
+        {
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Sheriff)
+                    {
+                        palya[i][j].x = i;
+                        palya[i][j].y = j;
+                    }
                 }
             }
         }
@@ -145,6 +160,34 @@ namespace Beadandó_KM
                         Bandita b = (Bandita)palya[i][j];
                         b.furkesz(ref palya);
                         b.banditalep(ref palya);
+                    }
+                }
+            }
+        }
+
+        public void sheriffleptet()
+        {
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Sheriff)
+                    {
+                        ((Sheriff)palya[i][j]).mozdult = false;
+                    }
+                }
+            }
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Sheriff)
+                    {
+                        Sheriff s = (Sheriff)palya[i][j];
+
+                        s.sFFeltolt();
+                        s.furkesz(ref palya);
+                        s.sFAdatElhelyez();
                     }
                 }
             }
@@ -178,25 +221,12 @@ namespace Beadandó_KM
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
-
+                s.x = Xgen;
+                s.y = Ygen; //it lehetett változtatni az értékét
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
                     palya[Xgen][Ygen] = s;
                     lerakottseriff++;
-                }
-            }
-        }
-        public void sheriffKeres()
-        {
-            for (int i = 0; i < palya.Count(); i++)
-            {
-                for (int j = 0; j < palya[i].Count(); j++)
-                {
-                    if (palya[i][j] is Sheriff)
-                    {
-                        palya[i][j].x = i;
-                        palya[i][j].y = j;
-                    }
                 }
             }
         }

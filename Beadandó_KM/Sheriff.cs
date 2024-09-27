@@ -41,6 +41,7 @@ namespace Beadandó_KM
         public void furkesz(ref List<List<VarosElem>> palya)
         {
             mitlat.Clear();
+
             for (int i = Math.Max(0, x - 1); i <= Math.Min(palya.Count - 1, x + 1); i++)
             {
                 List<VarosElem> temp = new List<VarosElem>();
@@ -50,6 +51,59 @@ namespace Beadandó_KM
                 }
                 mitlat.Add(temp);
             }
+        }
+
+        public bool mozdult = false;
+
+        public void sFAdatElhelyez()
+        {
+            for (int i = 0; i < mitlat.Count; i++)
+            {
+                for (int j = 0; j < mitlat[i].Count; j++)
+                {
+                    var elem = mitlat[i][j];
+
+                    sheriffFelfedezett[elem.x][elem.y] = elem;
+
+                }
+            }
+            sheriffFelfedezett[0][0] = null;
+            sheriffFelfedezett[x][y] = this;
+
+            //Console.WriteLine("------------------------------------------------");
+            //for (int i = 0; i < sheriffFelfedezett.Count; i++)
+            //{
+            //    for (int j = 0; j < sheriffFelfedezett[i].Count; j++)
+            //    {
+            //        if (sheriffFelfedezett[i][j] != null)
+            //        {
+            //            Console.Write(sheriffFelfedezett[i][j].nev);
+            //        }
+            //        else
+            //        {
+            //            Console.Write("X");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
+            Console.WriteLine("------------------------------------------------");
+            for (int i = 0; i < mitlat.Count; i++)
+            {
+                for (int j = 0; j < mitlat[i].Count; j++)
+                {
+                    if (mitlat[i][j] != null)
+                    {
+                        Console.Write(mitlat[i][j].nev);
+                    }
+                    else
+                    {
+                        Console.Write("X");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("------------------------------------------------");
+            Console.WriteLine(x + "|" + y);
         }
     }
 }

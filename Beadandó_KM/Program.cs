@@ -19,7 +19,6 @@ namespace Beadandó_KM
             palya.barrikadgeneral(); //jo
             palya.aranyroggeneral(); //jo
             palya.sherifflerak(MatyiZok);//jo
-            palya.sheriffKeres();
             palya.varoshazalerak(); //jo
             palya.whiskeygeneral(); //jo
             palya.banditageneral(); //jo
@@ -29,9 +28,14 @@ namespace Beadandó_KM
 
                 futasokszama++;
                 palya.szimulal(MatyiZok);
-                palya.banditaleptet();
+                palya.seriffKeres();
+                palya.sheriffleptet();
+                if (futasokszama % 2 == 0)
+                { 
+                    palya.banditaleptet();               
+                }
                 Console.WriteLine("Futások száma: "+futasokszama);
-                Thread.Sleep(2000); 
+                Thread.Sleep(1000); 
             }
             Console.ReadKey();
         }
