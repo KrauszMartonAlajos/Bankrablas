@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
+using System.Runtime.InteropServices;
 using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -167,6 +168,7 @@ namespace Beadandó_KM
             }
         }
 
+
         public void sherifflerak(Sheriff s)
         {
             int lerakottseriff = 0;
@@ -180,9 +182,21 @@ namespace Beadandó_KM
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
                     palya[Xgen][Ygen] = s;
-                    s.x = Xgen;
-                    s.y = Ygen;
                     lerakottseriff++;
+                }
+            }
+        }
+        public void sheriffKeres()
+        {
+            for (int i = 0; i < palya.Count(); i++)
+            {
+                for (int j = 0; j < palya[i].Count(); j++)
+                {
+                    if (palya[i][j] is Sheriff)
+                    {
+                        palya[i][j].x = i;
+                        palya[i][j].y = j;
+                    }
                 }
             }
         }
@@ -237,7 +251,7 @@ namespace Beadandó_KM
         public void szimulal(Sheriff s)
         {
             Console.Clear();
-            Console.WriteLine("\x1b[3J");
+            Console.WriteLine("\x1b");
             for (int i = 0; i < palya.Count; i++)
             {
                 for (int j = 0; j < palya[i].Count; j++)

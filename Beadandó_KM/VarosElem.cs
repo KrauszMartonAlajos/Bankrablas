@@ -25,7 +25,7 @@ namespace Beadandó_KM
 
         public override string ToString()
         {
-            return String.Format(nev + " Hp: " + Convert.ToString(hp) + " Dmg: " + Convert.ToString(sebzes));
+            return String.Format(nev + " Hp: " + Convert.ToString(hp) + " Dmg: " + Convert.ToString(sebzes) + "["+this.x+","+this.y+"]");
         }
     }
 }

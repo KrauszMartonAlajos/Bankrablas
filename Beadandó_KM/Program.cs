@@ -19,6 +19,7 @@ namespace Beadandó_KM
             palya.barrikadgeneral(); //jo
             palya.aranyroggeneral(); //jo
             palya.sherifflerak(MatyiZok);//jo
+            palya.sheriffKeres();
             palya.varoshazalerak(); //jo
             palya.whiskeygeneral(); //jo
             palya.banditageneral(); //jo
