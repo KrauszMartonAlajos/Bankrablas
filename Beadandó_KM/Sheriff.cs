@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,7 +9,7 @@ namespace Beadandó_KM
 {
     public class Sheriff : VarosElem
     {
-
+        public int id = 1;
         public Sheriff(string nev, int hp, int sebzes, int x, int y) : base(nev, hp, sebzes, x, y)
         {
             this.nev = nev;
@@ -53,11 +54,34 @@ namespace Beadandó_KM
 
         //public List<List<VarosElem>> sheriffFelfedezett = new List<List<VarosElem>>();
 
+        public int parbaj(Bandita b)
+        {
+            Random r = new Random();
+
+            while (this.hp > 0 && b.hp > 0)
+            {
+                b.hp -= this.sebzes;
+                this.hp -= r.Next(4, 15);
+
+                if (b.hp <= 0)
+                {
+                    return b.rogok;
+                }
+
+                if (this.hp <= 0)
+                {
+                    return -1;
+                }
+            }
+
+            return 0;
+        }
         public int vhX = -1;
         public int vhY = -1;
 
         Random r = new Random();
-        public void sherifflep(ref int rogok, ref List<List<VarosElem>> palya, ref bool fut)
+        
+        public void sherifflep(ref int rogok, ref List<List<VarosElem>> palya, ref bool fut, ref List<Whiskey> ismertWhiskeyk)
         {
             if (mozdult)
             {
@@ -86,26 +110,66 @@ namespace Beadandó_KM
                     }
                     else if (mitlat[i][j] is Bandita)
                     {
-                        // banditával itt találkozik
+
+                        if (this.hp < 4)
+                        {
+                            //megindul a legközelebbi whiskey felé
+                        }
+                        else 
+                        {
+                            int eredmeny = parbaj((Bandita)mitlat[i][j]);
+                            if (eredmeny == -1) //ez jól működik
+                            {
+                                fut = false;
+                                Console.Clear();
+                                Console.WriteLine("Vesztett a sheriff");
+                                return;
+                            }
+                            else
+                            {
+                                int lepX = mitlat[i][j].x;
+                                int lepY = mitlat[i][j].y;
+
+                                palya[lepX][lepY] = this;
+                                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y);
+
+                                this.x = lepX;
+                                this.y = lepY;
+                                rogok += eredmeny;
+
+                            }
+
+                        }
+
                     }
-                    else if (mitlat[i][j] is Whiskey && this.hp < 60)
+                    else if (mitlat[i][j] is Whiskey)
                     {
 
-                        int lepX = mitlat[i][j].x;
-                        int lepY = mitlat[i][j].y;
-
-                        palya[lepX][lepY] = this;
-                        palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y);
-
-                        this.x = lepX;
-                        this.y = lepY;
-                        this.hp += 50;
-                        int tobblet = this.hp - 100;
-                        if (tobblet > 0)
+                        if (this.hp < 60)
                         {
-                            this.hp -= tobblet;
+                            int lepX = mitlat[i][j].x;
+                            int lepY = mitlat[i][j].y;
+
+                            palya[lepX][lepY] = this;
+                            palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y);
+
+                            this.x = lepX;
+                            this.y = lepY;
+                            this.hp += 50;
+                            int tobblet = this.hp - 100;
+                            if (tobblet > 0)
+                            {
+                                this.hp -= tobblet;
+                            }
+                            return;
                         }
-                        return;
+                        else 
+                        {
+                            if (!ismertWhiskeyk.Contains(mitlat[i][j]))
+                            { 
+                                ismertWhiskeyk.Add((Whiskey)mitlat[i][j]);                           
+                            }                           
+                        }
                     }
                     else if (mitlat[i][j] is Varoshaza)
                     {

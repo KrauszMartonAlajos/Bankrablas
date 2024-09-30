@@ -92,7 +92,7 @@ namespace Beadandó_KM
             int lerakottrogok = 0;
             Random r = new Random();
 
-            while (lerakottrogok != 50)
+            while (lerakottrogok != 5)
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -109,17 +109,57 @@ namespace Beadandó_KM
         {
             int lerakottbanditak = 0;
             Random r = new Random();
-
-            while (lerakottbanditak != 5)
+            int id = 0;
+            while (lerakottbanditak != 10)
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
-
+                
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    Bandita bandita = new Bandita("B", 100, 1, 0,Xgen,Ygen);
+                    Bandita bandita = new Bandita("B", 100, 1, 0,Xgen,Ygen,id);
                     palya[Xgen][Ygen] = bandita;
                     lerakottbanditak++;
+                    id++;
+                }
+
+            }
+        }
+
+        public void banditaInfo(int id)
+        { 
+            for (int i = 0; i < palya.Count; i++) 
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Bandita)
+                    {
+                        Bandita temp = (Bandita)palya[i][j];
+                        if (temp.id == id)
+                        {
+                            Console.WriteLine(temp.ToString());
+                        }
+
+                    }
+                }
+            }
+        }
+
+        public void SheriffInfo(int id)
+        {
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Sheriff)
+                    {
+                        Sheriff temp = (Sheriff)palya[i][j];
+                        if (temp.id == id)
+                        {
+                            Console.WriteLine(temp.ToString());
+                        }
+
+                    }
                 }
             }
         }
@@ -131,6 +171,20 @@ namespace Beadandó_KM
                 for (int j = 0; j < palya[i].Count; j++)
                 {
                     if (palya[i][j] is Sheriff)
+                    {
+                        palya[i][j].x = i;
+                        palya[i][j].y = j;
+                    }
+                }
+            }
+        }
+        public void banditaKeres()
+        {
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Bandita)
                     {
                         palya[i][j].x = i;
                         palya[i][j].y = j;
@@ -165,6 +219,8 @@ namespace Beadandó_KM
             }
         }
 
+        List<Whiskey> ismertWhiskeyk = new List<Whiskey>();
+
         public void sheriffleptet(ref bool fut)
         {
             for (int i = 0; i < palya.Count; i++)
@@ -187,7 +243,7 @@ namespace Beadandó_KM
 
                         //s.sFFeltolt();
                         s.furkesz(ref palya);
-                        s.sherifflep(ref felszedettRogok, ref palya, ref fut);
+                        s.sherifflep(ref felszedettRogok, ref palya, ref fut, ref ismertWhiskeyk);
                         //s.mitLataSheriff();
 
                     }
@@ -200,7 +256,7 @@ namespace Beadandó_KM
             int lerakottwhiskey = 0;
             Random r = new Random();
 
-            while (lerakottwhiskey != 3)
+            while (lerakottwhiskey != 1)
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -273,17 +329,11 @@ namespace Beadandó_KM
             return true;
         }
 
-        public int parbaj(Bandita b, Sheriff s)
-        {
-            // 0 == > sheriff nyert de nem szerzett rögöt
-            // 1-3 == > sheriff nyert és szerzett 1-3 rögöt
-            // -1 == > sheriff meghalt
-            return 0;
-        }
+
         public void szimulal(Sheriff s)
         {
             Console.Clear();
-            Console.WriteLine("\x1b");
+            Console.WriteLine("\x1b[2J");
             for (int i = 0; i < palya.Count; i++)
             {
                 for (int j = 0; j < palya[i].Count; j++)
@@ -335,7 +385,12 @@ namespace Beadandó_KM
             Console.WriteLine("Felszedett aranyrögök száma: "+felszedettRogok);
             Console.WriteLine("Banditáknál lévő rögök száma: "+ banditaknalLevoRogokSzama());
             Console.WriteLine("Varosháza ismert koordinátái: " +s.vhX + " | " + s.vhY);
-
+            for (int i = 0; i < ismertWhiskeyk.Count; i++)
+            {
+                Console.WriteLine("Whiskey " + (i + 1) + ". koordinátái: (" + ismertWhiskeyk[i].x + "," + ismertWhiskeyk[i].y+")");
+            }
+            //banditaInfo(3);
+            //SheriffInfo(1);
         }
     }
 }

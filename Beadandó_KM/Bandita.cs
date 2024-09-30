@@ -12,8 +12,8 @@ namespace Beadandó_KM
         public int hp;
         public int sebzes;
         public int rogok;
-        public int x, y;
-        public Bandita(string nev, int hp, int sebzes, int rogok, int x, int y) : base(nev, hp, sebzes, x, y)
+        public int x, y, id;
+        public Bandita(string nev, int hp, int sebzes, int rogok, int x, int y, int id) : base(nev, hp, sebzes, x, y)
         {
             this.nev = nev;
             this.hp = hp;
@@ -21,6 +21,7 @@ namespace Beadandó_KM
             this.rogok = rogok;
             this.x = x;
             this.y = y;
+            this.id = id;
         }
 
         int[,] iranyok = new int[,] { { 0 , 1 },   // fel
@@ -77,10 +78,6 @@ namespace Beadandó_KM
                         this.y = lepY;
                         this.rogok += 1;
                         return;
-                    }
-                    else if (mitlat[i][j] is Sheriff)
-                    {
-                        // sheriffel itt találkozik
                     }
                     else if (mitlat[i][j] is Fold)
                     {

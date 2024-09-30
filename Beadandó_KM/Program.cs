@@ -15,7 +15,7 @@ namespace Beadandó_KM
 
             palya.palyaFeltolt();
             Random r = new Random();
-            Sheriff MatyiZok = new Sheriff("S", 5, r.Next(20,36),0,0);
+            Sheriff MatyiZok = new Sheriff("S", 100, r.Next(20,36),0,0);
             palya.barrikadgeneral(); //jo
             palya.aranyroggeneral(); //jo
             palya.sherifflerak(MatyiZok);//jo
@@ -29,13 +29,14 @@ namespace Beadandó_KM
                 futasokszama++;
                 palya.szimulal(MatyiZok);
                 palya.seriffKeres();
-                palya.sheriffleptet(ref fut);
                 if (futasokszama % 2 == 0)
                 { 
                     palya.banditaleptet();               
                 }
+                palya.banditaKeres();
+                palya.sheriffleptet(ref fut);
                 Console.WriteLine("Futások száma: "+futasokszama);
-                Thread.Sleep(1); 
+                Thread.Sleep(1000); 
             }
             Console.ReadKey();
         }
