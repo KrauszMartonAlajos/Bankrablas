@@ -92,7 +92,7 @@ namespace Beadandó_KM
             int lerakottrogok = 0;
             Random r = new Random();
 
-            while (lerakottrogok != 5)
+            while (lerakottrogok != 50)
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -110,7 +110,7 @@ namespace Beadandó_KM
             int lerakottbanditak = 0;
             Random r = new Random();
 
-            while (lerakottbanditak != 15)
+            while (lerakottbanditak != 5)
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -165,7 +165,7 @@ namespace Beadandó_KM
             }
         }
 
-        public void sheriffleptet()
+        public void sheriffleptet(ref bool fut)
         {
             for (int i = 0; i < palya.Count; i++)
             {
@@ -185,9 +185,11 @@ namespace Beadandó_KM
                     {
                         Sheriff s = (Sheriff)palya[i][j];
 
-                        s.sFFeltolt();
+                        //s.sFFeltolt();
                         s.furkesz(ref palya);
-                        s.sFAdatElhelyez();
+                        s.sherifflep(ref felszedettRogok, ref palya, ref fut);
+                        //s.mitLataSheriff();
+
                     }
                 }
             }
@@ -332,6 +334,8 @@ namespace Beadandó_KM
             Console.WriteLine(s.ToString());
             Console.WriteLine("Felszedett aranyrögök száma: "+felszedettRogok);
             Console.WriteLine("Banditáknál lévő rögök száma: "+ banditaknalLevoRogokSzama());
+            Console.WriteLine("Varosháza ismert koordinátái: " +s.vhX + " | " + s.vhY);
+
         }
     }
 }
