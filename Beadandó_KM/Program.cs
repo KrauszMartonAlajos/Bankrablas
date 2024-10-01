@@ -34,9 +34,13 @@ namespace Beadandó_KM
                     palya.banditaleptet(ref fut);               
                 }
                 palya.banditaKeres();
+                palya.whiskeyVisszaTolt();  
+                palya.whiskeySzamlalo();
+                palya.banditaSzamlalo();
+                palya.aranyrogSzamlalo();
                 palya.sheriffleptet(ref fut);
                 Console.WriteLine("Futások száma: "+futasokszama);
-                Thread.Sleep(1); 
+                Thread.Sleep(100); 
             }
             Console.ReadKey();
         }

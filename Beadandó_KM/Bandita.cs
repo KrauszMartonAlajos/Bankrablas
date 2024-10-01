@@ -89,14 +89,6 @@ namespace Beadandó_KM
                     {
                         int lepX = mitlat[i][j].x;
                         int lepY = mitlat[i][j].y;
-                        if (palya[lepX][lepY].felfedezett)
-                        {
-                            this.felfedezett = true;
-                        }
-                        else
-                        {
-                            this.felfedezett = false;
-                        }
 
                         palya[lepX][lepY] = this;
 

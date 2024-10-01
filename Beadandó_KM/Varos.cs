@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
@@ -213,13 +214,13 @@ namespace Beadandó_KM
                     {
                         Bandita b = (Bandita)palya[i][j];
                         b.furkesz(ref palya);
-                        b.banditalep(ref palya/*, ref fut*/);
+                        b.banditalep(ref palya);
                     }
                 }
             }
         }
 
-        List<Whiskey> ismertWhiskeyk = new List<Whiskey>();
+        
 
         public void sheriffFelfedez(int x, int y)
         {
@@ -237,8 +238,10 @@ namespace Beadandó_KM
         }
         public bool lephetEra(int x, int y)
         {
-            return (x >= 0 && x < palya.Count && y >= 0 && y < palya[0].Count);
+            return x >= 0 && x < palya.Count && y >= 0 && y < palya[0].Count;
         }
+
+        public int megoltbanditak = 0;
 
         public void sheriffleptet(ref bool fut)
         {
@@ -261,7 +264,7 @@ namespace Beadandó_KM
                         Sheriff s = (Sheriff)palya[i][j];
                         s.furkesz(ref palya);
                         sheriffFelfedez(s.x, s.y);
-                        s.sherifflep(ref felszedettRogok, ref palya, ref fut, ref ismertWhiskeyk);
+                        s.sherifflep(ref felszedettRogok, ref palya, ref fut, ref ismertWhiskeyk, ref megoltbanditak);
                         sheriffFelfedez(s.x, s.y);
 
                     }
@@ -287,6 +290,97 @@ namespace Beadandó_KM
             }
         }
 
+        List<Whiskey> ismertWhiskeyk = new List<Whiskey>();
+
+        public void whiskeyVisszaTolt()
+        {
+            int db = 0;
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Whiskey)
+                    {
+                        db++;
+                    }
+                }
+            }
+            Random rand = new Random();
+
+            while (db < 3)
+            {
+                int randX = rand.Next(0, palya.Count);
+                int randY = rand.Next(0, palya[randX].Count);
+
+                if (palya[randX][randY] is Fold)
+                {
+                    bool elozoallapot = palya[randX][randY].felfedezett;
+                    if (elozoallapot)
+                    {
+                        Whiskey ujW = new Whiskey("W", 50, 1, randX, randY, elozoallapot);
+                        palya[randX][randY] = ujW;
+                        ismertWhiskeyk.Add(ujW);
+                        db++;
+                    }
+                    else
+                    {
+                        Whiskey ujW = new Whiskey("W", 50, 1, randX, randY, elozoallapot);
+                        palya[randX][randY] = ujW;
+                        db++;
+                    }
+                    
+                }
+            }
+        }
+
+
+        public void whiskeySzamlalo()
+        {
+            int db = 0;
+            for (int i = 0; i < palya.Count; i++) 
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Whiskey)
+                    {
+                        db++;
+                    }
+                }
+            }
+            Console.WriteLine(db+" db Whiskey van a pályán!");
+        }
+
+        public void banditaSzamlalo()
+        {
+            int db = 0;
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Bandita)
+                    {
+                        db++;
+                    }
+                }
+            }
+            Console.WriteLine(db + " db Bandita van a pályán!");
+        }
+
+        public void aranyrogSzamlalo()
+        {
+            int db = 0;
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Aranyrog)
+                    {
+                        db++;
+                    }
+                }
+            }
+            Console.WriteLine(db + " db Aranyrog van a pályán!");
+        }
 
         public void sherifflerak(Sheriff s)
         {
@@ -414,6 +508,7 @@ namespace Beadandó_KM
             }
 
             Console.WriteLine(s.ToString());
+            Console.WriteLine("Megölt banditák száma: "+megoltbanditak);
             Console.WriteLine("Felszedett aranyrögök száma: "+felszedettRogok);
             Console.WriteLine("Banditáknál lévő rögök száma: "+ banditaknalLevoRogokSzama());
             Console.WriteLine("Varosháza ismert koordinátái: " +s.vhX + " | " + s.vhY);

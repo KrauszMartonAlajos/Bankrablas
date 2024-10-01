@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace Beadandó_KM
 {
@@ -79,7 +81,7 @@ namespace Beadandó_KM
 
         Random r = new Random();
         
-        public void sherifflep(ref int rogok, ref List<List<VarosElem>> palya, ref bool fut, ref List<Whiskey> ismertWhiskeyk)
+        public void sherifflep(ref int rogok, ref List<List<VarosElem>> palya, ref bool fut, ref List<Whiskey> ismertWhiskeyk, ref int megoltbanditak)
         {
             if (mozdult)
             {
@@ -110,7 +112,7 @@ namespace Beadandó_KM
                     {
                         fut = false;
                         Console.Clear();
-                        Console.WriteLine("Vesztett a sheriff mert megölték a banditák Kis elsebe");
+                        Console.WriteLine("Vesztett a sheriff mert megölték a banditák!");
                     }
 
                     else if (mitlat[i][j] is Bandita)
@@ -194,6 +196,11 @@ namespace Beadandó_KM
                                 this.x = lepX;
                                 this.y = lepY;
                                 rogok += eredmeny;
+                                megoltbanditak++;
+                                if (megoltbanditak == 3 && rogok == 4)
+                                {
+                                    rogok++;
+                                }
 
                             }
 
