@@ -30,7 +30,7 @@ namespace Beadandó_KM
                 List<VarosElem> temp = new List<VarosElem>();
                 for (int j = Math.Max(0, y - 1); j <= Math.Min(palya[i].Count - 1, y + 1); j++)
                 {
-                    
+                    palya[i][j].felfedezett = true;
                     temp.Add(palya[i][j]);
                 }
                 mitlat.Add(temp);
@@ -99,28 +99,88 @@ namespace Beadandó_KM
                         int lepY = mitlat[i][j].y;
 
                         palya[lepX][lepY] = this;
-                        palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y,true);
+                        palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
 
                         this.x = lepX;
                         this.y = lepY;
                         rogok += 1;
                         return;
                     }
+                    else if (this.hp < 0)
+                    {
+                        fut = false;
+                        Console.Clear();
+                        Console.WriteLine("Vesztett a sheriff mert megölték a banditák Kis elsebe");
+                    }
+
                     else if (mitlat[i][j] is Bandita)
                     {
 
-                        if (this.hp < 4)
+                        if (this.hp < 60 && ismertWhiskeyk.Count != 0)
                         {
-                            //megindul a legközelebbi whiskey felé
+
+                            int JelenX = this.x;
+                            int JelenY = this.y;
+
+                            int CelX = -1;
+                            int CelY = -1;
+                            double closestDistance = double.MaxValue;
+
+                            for (int k = 0; k < ismertWhiskeyk.Count; k++)
+                            {
+                                var whiskey = ismertWhiskeyk[k];
+                                int whiskeyX = whiskey.x;
+                                int whiskeyY = whiskey.y;
+
+                                double distance = Math.Sqrt(Math.Pow(whiskeyX - JelenX, 2) + Math.Pow(whiskeyY - JelenY, 2));
+
+                                if (distance < closestDistance)
+                                {
+                                    closestDistance = distance;
+                                    CelX = whiskeyX;
+                                    CelY = whiskeyY;
+                                }
+                            }
+
+                            if (CelX != -1 && CelY != -1)
+                            {
+                                int deltaX = CelX - JelenX;
+                                int deltaY = CelY - JelenY;
+                                if (Math.Abs(deltaX) > Math.Abs(deltaY))
+                                {
+                                    if (deltaX > 0)
+                                    {
+                                        this.x++;
+                                    }
+                                    else
+                                    {
+                                        this.x--;
+                                    }
+                                }
+                                else
+                                {
+                                    if (deltaY > 0)
+                                    {
+                                        this.y++;
+                                    }
+                                    else
+                                    {
+                                        this.y--;
+                                    }
+                                }
+                                palya[JelenX][JelenY] = new Fold("F", 1, 1, JelenX, JelenY, true);
+                                palya[this.x][this.y] = this;
+                            }
                         }
-                        else 
+
+                        else
                         {
                             int eredmeny = parbaj((Bandita)mitlat[i][j]);
-                            if (eredmeny == -1) //ez jól működik
+                            if (eredmeny == -1)
                             {
                                 fut = false;
                                 Console.Clear();
-                                Console.WriteLine("Vesztett a sheriff");
+                                Console.WriteLine("Vesztett a sheriff mert megölték a banditák");
                                 return;
                             }
                             else
@@ -162,48 +222,85 @@ namespace Beadandó_KM
                             for (int k = 0; k < ismertWhiskeyk.Count; k++)
                             {
                                 if (ismertWhiskeyk[k] == (Whiskey)mitlat[i][j])
-                                { 
+                                {
                                     ismertWhiskeyk.RemoveAt(k);
                                 }
                             }
                             return;
                         }
-                        else 
+                        else
                         {
                             if (!ismertWhiskeyk.Contains(mitlat[i][j]))
-                            { 
-                                ismertWhiskeyk.Add((Whiskey)mitlat[i][j]);                           
-                            }                           
+                            {
+                                ismertWhiskeyk.Add((Whiskey)mitlat[i][j]);
+                            }
                         }
                     }
                     else if (mitlat[i][j] is Varoshaza)
                     {
-                        if (rogok >= 4)
+                        if (rogok == 5)
                         {
                             int lepX = mitlat[i][j].x;
                             int lepY = mitlat[i][j].y;
 
                             palya[lepX][lepY] = this;
-                            palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y,true);
+                            palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
                             this.x = lepX;
                             this.y = lepY;
                             fut = false;
                             Console.Clear();
-                            Console.WriteLine("Nyert a sheriff");
+                            Console.WriteLine("Nyert a sheriff össze szedett rögök: " + rogok);
 
                         }
 
                         vhX = mitlat[i][j].x;
                         vhY = mitlat[i][j].y;
                     }
-                    else if (rogok == 4)
-                    { 
-                        //itt kell elkezdeni keresni a városházát a meglévő koordináta alapján
+                    else if (rogok == 5 && vhX != -1 && vhY != -1)
+                    {
+                        int JelenX = this.x;
+                        int JelenY = this.y;
+
+                        int CelX = vhX;
+                        int CelY = vhY;
+
+                        int IranyX = CelX - JelenX;
+                        int IranyY = CelY - JelenY;
+
+                        if (Math.Abs(IranyX) > Math.Abs(IranyY))
+                        {
+                            if (IranyX > 0)
+                            {
+                                this.x++;
+                            }
+                            else
+                            {
+                                this.x--;
+                            }
+                        }
+                        else
+                        {
+
+                            if (IranyY > 0)
+                            {
+                                this.y++;
+                            }
+                            else
+                            {
+                                this.y--;
+                            }
+                        }
+                        palya[JelenX][JelenY] = new Fold("F", 1, 1, JelenX, JelenY, true);
+                        palya[this.x][this.y] = this;
+                        fut = false;
+                        Console.Clear();
+                        Console.WriteLine("Nyert a sheriff össze szedett rögök: " + rogok);
                     }
 
                     else if (mitlat[i][j] is Fold)
                     {
                         latottFoldek.Add((Fold)mitlat[i][j]);
+
                     }
                 }
             }

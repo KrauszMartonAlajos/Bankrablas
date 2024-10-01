@@ -57,7 +57,7 @@ namespace Beadandó_KM
             int lerakottbarrikadok = 0;
             Random r = new Random();
             int randomBarikadDB = r.Next(25, 51);
-            while (lerakottbarrikadok != randomBarikadDB)
+            while (lerakottbarrikadok != randomBarikadDB) 
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -92,7 +92,7 @@ namespace Beadandó_KM
             int lerakottrogok = 0;
             Random r = new Random();
 
-            while (lerakottrogok != 5)
+            while (lerakottrogok != 5) 
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -110,7 +110,7 @@ namespace Beadandó_KM
             int lerakottbanditak = 0;
             Random r = new Random();
             int id = 0;
-            while (lerakottbanditak != 10)
+            while (lerakottbanditak != 4) 
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -221,6 +221,25 @@ namespace Beadandó_KM
 
         List<Whiskey> ismertWhiskeyk = new List<Whiskey>();
 
+        public void sheriffFelfedez(int x, int y)
+        {
+            for (int i = -1; i <= 1; i++)
+            {
+                for (int j = -1; j <= 1; j++)
+                {
+                    if (lephetEra(x + i, y + j))
+                    {
+                        palya[x + i][y + j].felfedezett = true;
+
+                    }
+                }
+            }
+        }
+        public bool lephetEra(int x, int y)
+        {
+            return (x >= 0 && x < palya.Count && y >= 0 && y < palya[0].Count);
+        }
+
         public void sheriffleptet(ref bool fut)
         {
             for (int i = 0; i < palya.Count; i++)
@@ -241,8 +260,9 @@ namespace Beadandó_KM
                     {
                         Sheriff s = (Sheriff)palya[i][j];
                         s.furkesz(ref palya);
+                        sheriffFelfedez(s.x, s.y);
                         s.sherifflep(ref felszedettRogok, ref palya, ref fut, ref ismertWhiskeyk);
-                        s.mitlatFelfed(ref palya);
+                        sheriffFelfedez(s.x, s.y);
 
                     }
                 }
@@ -254,7 +274,7 @@ namespace Beadandó_KM
             int lerakottwhiskey = 0;
             Random r = new Random();
 
-            while (lerakottwhiskey != 1)
+            while (lerakottwhiskey != 3) 
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -292,7 +312,7 @@ namespace Beadandó_KM
             int lerakottvaroshaza = 0;
             Random r = new Random();
 
-            while (lerakottvaroshaza != 1)
+            while (lerakottvaroshaza != 1) 
             {
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
@@ -336,46 +356,53 @@ namespace Beadandó_KM
             {
                 for (int j = 0; j < palya[i].Count; j++)
                 {
-                    string nev;
-                    nev = palya[i][j].nev;
-                    if (nev == "F") //föld
+                    if (palya[i][j].felfedezett)
                     {
-                        //Console.Write(nev);
-                        Console.BackgroundColor = ConsoleColor.White;
-                    }
-                    else if (nev == "S") //sheriff
-                    {
-                        //Console.Write(nev);
-                        Console.BackgroundColor = ConsoleColor.Red;
-                    }
-                    else if (nev == "B") //Bandita
-                    {
-                        //Console.Write(nev);
-                        Console.BackgroundColor = ConsoleColor.DarkGray;
-                    }
-                    else if (nev == "W") //Whiskey
-                    {
-                        //Console.Write(nev);
-                        Console.BackgroundColor = ConsoleColor.DarkYellow;
-                    }
-                    else if (nev == "X") // Barrikád
-                    {
-                        //Console.Write(nev);
-                        Console.BackgroundColor = ConsoleColor.DarkMagenta;
-                    }
-                    else if (nev == "A") // Arany
-                    {
-                        //Console.Write(nev);
-                        Console.BackgroundColor = ConsoleColor.Yellow;
-                    }
-                    else if (nev == "H") // Városháza
-                    {
-                        //Console.Write(nev);
-                        Console.BackgroundColor = ConsoleColor.Blue;
+                        string nev;
+                        nev = palya[i][j].nev;
+                        if (nev == "F") //föld
+                        {
+                            //Console.Write(nev);
+                            Console.BackgroundColor = ConsoleColor.White;
+                        }
+                        else if (nev == "S") //sheriff
+                        {
+                            //Console.Write(nev);
+                            Console.BackgroundColor = ConsoleColor.Red;
+                        }
+                        else if (nev == "B") //Bandita
+                        {
+                            //Console.Write(nev);
+                            Console.BackgroundColor = ConsoleColor.DarkGray;
+                        }
+                        else if (nev == "W") //Whiskey
+                        {
+                            //Console.Write(nev);
+                            Console.BackgroundColor = ConsoleColor.DarkYellow;
+                        }
+                        else if (nev == "X") // Barrikád
+                        {
+                            //Console.Write(nev);
+                            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                        }
+                        else if (nev == "A") // Arany
+                        {
+                            //Console.Write(nev);
+                            Console.BackgroundColor = ConsoleColor.Yellow;
+                        }
+                        else if (nev == "H") // Városháza
+                        {
+                            //Console.Write(nev);
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                        }
+                        else
+                        {
+                            Console.ResetColor();
+                        }
                     }
                     else
                     {
-                        Console.ResetColor();
+                        Console.BackgroundColor = ConsoleColor.Black;
                     }
 
                     Console.Write("  ");

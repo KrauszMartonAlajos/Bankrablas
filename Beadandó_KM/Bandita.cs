@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace Beadandó_KM
 {
@@ -87,9 +89,18 @@ namespace Beadandó_KM
                     {
                         int lepX = mitlat[i][j].x;
                         int lepY = mitlat[i][j].y;
+                        if (palya[lepX][lepY].felfedezett)
+                        {
+                            this.felfedezett = true;
+                        }
+                        else
+                        {
+                            this.felfedezett = false;
+                        }
 
                         palya[lepX][lepY] = this;
-                        palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y,true);
+
+                        palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, palya[this.x][this.y].felfedezett);
 
                         this.x = lepX;
                         this.y = lepY;
@@ -105,21 +116,35 @@ namespace Beadandó_KM
             }
             if (latottFoldek.Count > 0)
             {
+                //ha felfedezett részről lép felfedezetlenbe akkor a felfedezett rész ahonnan lép felfedezetlen lesz !!!!!!!!!!!!!
                 Fold valasztottFold = latottFoldek[random.Next(0, latottFoldek.Count)];
-
-                if (palya[valasztottFold.x][valasztottFold.y] is Fold)
+                if (palya[valasztottFold.x][valasztottFold.y].felfedezett)
                 {
-                    palya[valasztottFold.x][valasztottFold.y] = this;
-                    palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
-
-                    this.x = valasztottFold.x;
-                    this.y = valasztottFold.y;
+                    this.felfedezett = true;
+                    palya[valasztottFold.x][valasztottFold.y].felfedezett = true;
                 }
+                else
+                {
+                    this.felfedezett = false;
+                    palya[valasztottFold.x][valasztottFold.y].felfedezett = false;
+
+                }
+
+                //innen
+                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, palya[this.x][this.y].felfedezett);
+
+                // ide lép
+                palya[valasztottFold.x][valasztottFold.y] = this;
+
+                
+                
+
+                this.x = valasztottFold.x;
+                this.y = valasztottFold.y;
+                return;
+
             }
 
-        }
-
-        
-
+        }      
     }
 }

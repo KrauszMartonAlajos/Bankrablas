@@ -36,7 +36,7 @@ namespace Beadandó_KM
                 palya.banditaKeres();
                 palya.sheriffleptet(ref fut);
                 Console.WriteLine("Futások száma: "+futasokszama);
-                Thread.Sleep(1000); 
+                Thread.Sleep(1); 
             }
             Console.ReadKey();
         }
