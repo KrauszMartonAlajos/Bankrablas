@@ -20,20 +20,6 @@ namespace Beadandó_KM
             this.felfedezett = felfedezett;
         }
 
-
-        //public void sFFeltolt()
-        //{
-        //    for (int i = 0; i < 25; i++)
-        //    {
-        //        List<VarosElem> temp = new List<VarosElem>();
-        //        for (int j = 0; j < 25; j++)
-        //        {
-        //            temp.Add(null);
-        //        }
-        //        sheriffFelfedezett.Add(temp);
-        //    }
-        //}
-
         List<List<VarosElem>> mitlat = new List<List<VarosElem>>();
         public void furkesz(ref List<List<VarosElem>> palya)
         {
@@ -51,22 +37,20 @@ namespace Beadandó_KM
             }
             
         }
-        //public void mitlatFelfed(ref List<List<VarosElem>> palya)
-        //{
-        //    for (int i = 0; i < mitlat.Count; i++)
-        //    {
-        //        for (int j = 0; j < mitlat[i].Count; j++)
-        //        {
-        //            palya[mitlat[i][j].x][mitlat[i][j].y].felfedezett = true;
-        //        }
-        //    }
-        //}
+        public void mitlatFelfed(ref List<List<VarosElem>> palya)
+        {
+            for (int i = 0; i < mitlat.Count; i++)
+            {
+                for (int j = 0; j < mitlat[i].Count; j++)
+                {
+                    palya[mitlat[i][j].x][mitlat[i][j].y].felfedezett = true;
+                }
+            }
+        }
 
 
         public bool mozdult = false;
 
-
-        //public List<List<VarosElem>> sheriffFelfedezett = new List<List<VarosElem>>();
 
         public int parbaj(Bandita b)
         {
@@ -237,26 +221,5 @@ namespace Beadandó_KM
                 }
             }
         }
-
-
-        //public void mitLataSheriff()
-        //{
-        //    for (int i = 0; i < sheriffFelfedezett.Count; i++)
-        //    {
-        //        for (int j = 0; j < sheriffFelfedezett[i].Count; j++)
-        //        {
-        //            if (sheriffFelfedezett[i][j] != null)
-        //            {
-        //                Console.Write(sheriffFelfedezett[i][j].nev);
-        //            }
-        //            else
-        //            {
-        //                Console.Write("-");
-        //            }
-        //        }
-        //        Console.WriteLine();
-        //    }
-        //    sheriffFelfedezett.Clear();
-        //}
     }
 }

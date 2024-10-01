@@ -240,12 +240,9 @@ namespace Beadandó_KM
                     if (palya[i][j] is Sheriff)
                     {
                         Sheriff s = (Sheriff)palya[i][j];
-
-                        //s.sFFeltolt();
                         s.furkesz(ref palya);
-                        //s.mitlatFelfed(ref palya);
                         s.sherifflep(ref felszedettRogok, ref palya, ref fut, ref ismertWhiskeyk);
-                        //s.mitLataSheriff();
+                        s.mitlatFelfed(ref palya);
 
                     }
                 }
@@ -340,49 +337,49 @@ namespace Beadandó_KM
                 for (int j = 0; j < palya[i].Count; j++)
                 {
                     string nev;
-                    if (palya[i][j].felfedezett)
+                    nev = palya[i][j].nev;
+                    if (nev == "F") //föld
                     {
-                        nev = palya[i][j].nev;
-                        if (nev == "F") //föld
-                        {
-                            Console.BackgroundColor = ConsoleColor.White;
-                        }
-                        else if (nev == "S") //sheriff
-                        {
-                            Console.BackgroundColor = ConsoleColor.Red;
-                        }
-                        else if (nev == "B") //Bandita
-                        {
-                            Console.BackgroundColor = ConsoleColor.DarkGray;
-                        }
-                        else if (nev == "W") //Whiskey
-                        {
-                            Console.BackgroundColor = ConsoleColor.DarkYellow;
-                        }
-                        else if (nev == "X") // Barrikád
-                        {
-                            Console.BackgroundColor = ConsoleColor.DarkMagenta;
-                        }
-                        else if (nev == "A") // Arany
-                        {
-                            Console.BackgroundColor = ConsoleColor.Yellow;
-                        }
-                        else if (nev == "H") // Városháza
-                        {
-                            Console.BackgroundColor = ConsoleColor.Blue;
-                        }
-                        else
-                        {
-                            Console.ResetColor();
-                        }
-
-                        Console.Write("  ");
+                        //Console.Write(nev);
+                        Console.BackgroundColor = ConsoleColor.White;
+                    }
+                    else if (nev == "S") //sheriff
+                    {
+                        //Console.Write(nev);
+                        Console.BackgroundColor = ConsoleColor.Red;
+                    }
+                    else if (nev == "B") //Bandita
+                    {
+                        //Console.Write(nev);
+                        Console.BackgroundColor = ConsoleColor.DarkGray;
+                    }
+                    else if (nev == "W") //Whiskey
+                    {
+                        //Console.Write(nev);
+                        Console.BackgroundColor = ConsoleColor.DarkYellow;
+                    }
+                    else if (nev == "X") // Barrikád
+                    {
+                        //Console.Write(nev);
+                        Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                    }
+                    else if (nev == "A") // Arany
+                    {
+                        //Console.Write(nev);
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                    }
+                    else if (nev == "H") // Városháza
+                    {
+                        //Console.Write(nev);
+                        Console.BackgroundColor = ConsoleColor.Blue;
                     }
                     else
-                    { 
-                        Console.BackgroundColor= ConsoleColor.Black;
+                    {
+                        Console.ResetColor();
                     }
-                    
+
+                    Console.Write("  ");
+
                 }
 
                 Console.ResetColor();
