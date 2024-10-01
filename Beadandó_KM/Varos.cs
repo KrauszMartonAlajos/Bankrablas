@@ -47,7 +47,7 @@ namespace Beadandó_KM
             {
                 for (int j = 0; j < palya[i].Count; j++)
                 {
-                    palya[i][j] = new Fold("F", 1, 1,i,j);
+                    palya[i][j] = new Fold("F", 1, 1,i,j,false);
                 }
             }
         }
@@ -63,7 +63,7 @@ namespace Beadandó_KM
                 int Ygen = r.Next(0, y);
                 if (!(palya[Xgen][Ygen] is Barrikad))
                 {
-                    palya[Xgen][Ygen] = new Barrikad("X", 1, 1, Xgen, Ygen);
+                    palya[Xgen][Ygen] = new Barrikad("X", 1, 1, Xgen, Ygen, false);
                     lerakottbarrikadok++;
                 }
             }
@@ -99,7 +99,7 @@ namespace Beadandó_KM
 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    palya[Xgen][Ygen] = new Aranyrog("A", 1, 1, Xgen, Ygen);
+                    palya[Xgen][Ygen] = new Aranyrog("A", 1, 1, Xgen, Ygen,false);
                     lerakottrogok++;
                 }
             }
@@ -117,7 +117,7 @@ namespace Beadandó_KM
                 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    Bandita bandita = new Bandita("B", 100, 1, 0,Xgen,Ygen,id);
+                    Bandita bandita = new Bandita("B", 100, 1, 0,Xgen,Ygen,id,false);
                     palya[Xgen][Ygen] = bandita;
                     lerakottbanditak++;
                     id++;
@@ -193,7 +193,7 @@ namespace Beadandó_KM
             }
         }
 
-        public void banditaleptet()
+        public void banditaleptet(ref bool fut)
         {           
             for (int i = 0; i < palya.Count; i++)
             {
@@ -213,7 +213,7 @@ namespace Beadandó_KM
                     {
                         Bandita b = (Bandita)palya[i][j];
                         b.furkesz(ref palya);
-                        b.banditalep(ref palya);
+                        b.banditalep(ref palya/*, ref fut*/);
                     }
                 }
             }
@@ -243,6 +243,7 @@ namespace Beadandó_KM
 
                         //s.sFFeltolt();
                         s.furkesz(ref palya);
+                        //s.mitlatFelfed(ref palya);
                         s.sherifflep(ref felszedettRogok, ref palya, ref fut, ref ismertWhiskeyk);
                         //s.mitLataSheriff();
 
@@ -263,7 +264,7 @@ namespace Beadandó_KM
 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    palya[Xgen][Ygen] = new Whiskey("W", 50, 1,Xgen,Ygen);
+                    palya[Xgen][Ygen] = new Whiskey("W", 50, 1,Xgen,Ygen,false);
                     lerakottwhiskey++;
                 }
             }
@@ -301,7 +302,7 @@ namespace Beadandó_KM
 
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
-                    palya[Xgen][Ygen] = new Varoshaza("H", 1, 1,Xgen,Ygen);
+                    palya[Xgen][Ygen] = new Varoshaza("H", 1, 1,Xgen,Ygen,false);
                     lerakottvaroshaza++;
                 }
             }
@@ -339,42 +340,49 @@ namespace Beadandó_KM
                 for (int j = 0; j < palya[i].Count; j++)
                 {
                     string nev;
+                    if (palya[i][j].felfedezett)
+                    {
+                        nev = palya[i][j].nev;
+                        if (nev == "F") //föld
+                        {
+                            Console.BackgroundColor = ConsoleColor.White;
+                        }
+                        else if (nev == "S") //sheriff
+                        {
+                            Console.BackgroundColor = ConsoleColor.Red;
+                        }
+                        else if (nev == "B") //Bandita
+                        {
+                            Console.BackgroundColor = ConsoleColor.DarkGray;
+                        }
+                        else if (nev == "W") //Whiskey
+                        {
+                            Console.BackgroundColor = ConsoleColor.DarkYellow;
+                        }
+                        else if (nev == "X") // Barrikád
+                        {
+                            Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                        }
+                        else if (nev == "A") // Arany
+                        {
+                            Console.BackgroundColor = ConsoleColor.Yellow;
+                        }
+                        else if (nev == "H") // Városháza
+                        {
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                        }
+                        else
+                        {
+                            Console.ResetColor();
+                        }
 
-                    nev = palya[i][j].nev;
-                    if (nev == "F") //föld
-                    {
-                        Console.BackgroundColor = ConsoleColor.White;
-                    }
-                    else if (nev == "S") //sheriff
-                    {
-                        Console.BackgroundColor = ConsoleColor.Red;
-                    }
-                    else if (nev == "B") //Bandita
-                    {
-                        Console.BackgroundColor = ConsoleColor.DarkGray;
-                    }
-                    else if (nev == "W") //Whiskey
-                    {
-                        Console.BackgroundColor = ConsoleColor.DarkYellow;
-                    }
-                    else if (nev == "X") // Barrikád
-                    {
-                        Console.BackgroundColor = ConsoleColor.Black;
-                    }
-                    else if (nev == "A") // Arany
-                    {
-                        Console.BackgroundColor = ConsoleColor.Yellow;
-                    }
-                    else if (nev == "H") // Városháza
-                    {
-                        Console.BackgroundColor = ConsoleColor.Blue;
+                        Console.Write("  ");
                     }
                     else
-                    {
-                        Console.ResetColor();
+                    { 
+                        Console.BackgroundColor= ConsoleColor.Black;
                     }
-
-                    Console.Write("  ");
+                    
                 }
 
                 Console.ResetColor();

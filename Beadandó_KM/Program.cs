@@ -15,7 +15,7 @@ namespace Beadandó_KM
 
             palya.palyaFeltolt();
             Random r = new Random();
-            Sheriff MatyiZok = new Sheriff("S", 100, r.Next(20,36),0,0);
+            Sheriff MatyiZok = new Sheriff("S", 100, r.Next(20,36),0,0,true);
             palya.barrikadgeneral(); //jo
             palya.aranyroggeneral(); //jo
             palya.sherifflerak(MatyiZok);//jo
@@ -31,7 +31,7 @@ namespace Beadandó_KM
                 palya.seriffKeres();
                 if (futasokszama % 2 == 0)
                 { 
-                    palya.banditaleptet();               
+                    palya.banditaleptet(ref fut);               
                 }
                 palya.banditaKeres();
                 palya.sheriffleptet(ref fut);

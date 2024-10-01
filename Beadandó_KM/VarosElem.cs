@@ -12,15 +12,17 @@ namespace Beadandó_KM
         public int hp;
         public int sebzes;
         public int x, y;
+        public bool felfedezett;
 
 
-        public VarosElem(string nev, int hp, int sebzes, int x, int y)
+        public VarosElem(string nev, int hp, int sebzes, int x, int y, bool felfedezett)
         {
             this.nev = nev;
             this.hp = hp;
             this.sebzes = sebzes;
             this.x = x;
             this.y = y;
+            this.felfedezett = felfedezett;
         }
 
         public override string ToString()

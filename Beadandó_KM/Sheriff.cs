@@ -10,13 +10,14 @@ namespace Beadandó_KM
     public class Sheriff : VarosElem
     {
         public int id = 1;
-        public Sheriff(string nev, int hp, int sebzes, int x, int y) : base(nev, hp, sebzes, x, y)
+        public Sheriff(string nev, int hp, int sebzes, int x, int y,bool felfedezett) : base(nev, hp, sebzes, x, y,felfedezett)
         {
             this.nev = nev;
             this.hp = hp;
             this.sebzes = sebzes;
             this.x = x;
             this.y = y;
+            this.felfedezett = felfedezett;
         }
 
 
@@ -43,11 +44,24 @@ namespace Beadandó_KM
                 List<VarosElem> temp = new List<VarosElem>();
                 for (int j = Math.Max(0, y - 1); j <= Math.Min(palya[i].Count - 1, y + 1); j++)
                 {
+                    
                     temp.Add(palya[i][j]);
                 }
                 mitlat.Add(temp);
             }
+            
         }
+        //public void mitlatFelfed(ref List<List<VarosElem>> palya)
+        //{
+        //    for (int i = 0; i < mitlat.Count; i++)
+        //    {
+        //        for (int j = 0; j < mitlat[i].Count; j++)
+        //        {
+        //            palya[mitlat[i][j].x][mitlat[i][j].y].felfedezett = true;
+        //        }
+        //    }
+        //}
+
 
         public bool mozdult = false;
 
@@ -72,8 +86,8 @@ namespace Beadandó_KM
                 {
                     return -1;
                 }
-            }
 
+            }
             return 0;
         }
         public int vhX = -1;
@@ -101,7 +115,7 @@ namespace Beadandó_KM
                         int lepY = mitlat[i][j].y;
 
                         palya[lepX][lepY] = this;
-                        palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y);
+                        palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y,true);
 
                         this.x = lepX;
                         this.y = lepY;
@@ -131,7 +145,7 @@ namespace Beadandó_KM
                                 int lepY = mitlat[i][j].y;
 
                                 palya[lepX][lepY] = this;
-                                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y);
+                                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
 
                                 this.x = lepX;
                                 this.y = lepY;
@@ -151,7 +165,7 @@ namespace Beadandó_KM
                             int lepY = mitlat[i][j].y;
 
                             palya[lepX][lepY] = this;
-                            palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y);
+                            palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
 
                             this.x = lepX;
                             this.y = lepY;
@@ -160,6 +174,13 @@ namespace Beadandó_KM
                             if (tobblet > 0)
                             {
                                 this.hp -= tobblet;
+                            }
+                            for (int k = 0; k < ismertWhiskeyk.Count; k++)
+                            {
+                                if (ismertWhiskeyk[k] == (Whiskey)mitlat[i][j])
+                                { 
+                                    ismertWhiskeyk.RemoveAt(k);
+                                }
                             }
                             return;
                         }
@@ -179,7 +200,7 @@ namespace Beadandó_KM
                             int lepY = mitlat[i][j].y;
 
                             palya[lepX][lepY] = this;
-                            palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y);
+                            palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y,true);
                             this.x = lepX;
                             this.y = lepY;
                             fut = false;
@@ -209,7 +230,7 @@ namespace Beadandó_KM
                 if (palya[valasztottFold.x][valasztottFold.y] is Fold)
                 {
                     palya[valasztottFold.x][valasztottFold.y] = this;
-                    palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y);
+                    palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
 
                     this.x = valasztottFold.x;
                     this.y = valasztottFold.y;
