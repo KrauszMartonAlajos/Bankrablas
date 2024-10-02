@@ -110,6 +110,9 @@ namespace Beadandó_KM
             {
                 //ha felfedezett részről lép felfedezetlenbe akkor a felfedezett rész ahonnan lép felfedezetlen lesz !!!!!!!!!!!!!
                 Fold valasztottFold = latottFoldek[random.Next(0, latottFoldek.Count)];
+
+                bool fel = palya[this.x][this.y].felfedezett;
+                
                 if (palya[valasztottFold.x][valasztottFold.y].felfedezett)
                 {
                     this.felfedezett = true;
@@ -122,8 +125,7 @@ namespace Beadandó_KM
 
                 }
 
-                //innen
-                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, palya[this.x][this.y].felfedezett);
+                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, fel);
 
                 // ide lép
                 palya[valasztottFold.x][valasztottFold.y] = this;

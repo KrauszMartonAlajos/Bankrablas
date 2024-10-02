@@ -80,7 +80,23 @@ namespace Beadandó_KM
         public int vhY = -1;
 
         Random r = new Random();
-        
+
+        public int aranyrogSzamlalo(List<List<VarosElem>> palya)
+        {
+            int db = 0;
+            for (int i = 0; i < palya.Count; i++)
+            {
+                for (int j = 0; j < palya[i].Count; j++)
+                {
+                    if (palya[i][j] is Aranyrog)
+                    {
+                        db++;
+                    }
+                }
+            }
+            return db;
+        }
+
         public void sherifflep(ref int rogok, ref List<List<VarosElem>> palya, ref bool fut, ref List<Whiskey> ismertWhiskeyk, ref int megoltbanditak)
         {
             if (mozdult)
@@ -126,7 +142,7 @@ namespace Beadandó_KM
 
                             int CelX = -1;
                             int CelY = -1;
-                            double closestDistance = double.MaxValue;
+                            double lekisebbTav = double.MaxValue;
 
                             for (int k = 0; k < ismertWhiskeyk.Count; k++)
                             {
@@ -134,11 +150,11 @@ namespace Beadandó_KM
                                 int whiskeyX = whiskey.x;
                                 int whiskeyY = whiskey.y;
 
-                                double distance = Math.Sqrt(Math.Pow(whiskeyX - JelenX, 2) + Math.Pow(whiskeyY - JelenY, 2));
+                                double tav = Math.Sqrt(Math.Pow(whiskeyX - JelenX, 2) + Math.Pow(whiskeyY - JelenY, 2));
 
-                                if (distance < closestDistance)
+                                if (tav < lekisebbTav)
                                 {
-                                    closestDistance = distance;
+                                    lekisebbTav = tav;
                                     CelX = whiskeyX;
                                     CelY = whiskeyY;
                                 }
@@ -197,7 +213,7 @@ namespace Beadandó_KM
                                 this.y = lepY;
                                 rogok += eredmeny;
                                 megoltbanditak++;
-                                if (megoltbanditak == 3 && rogok == 4)
+                                if (megoltbanditak == 3 && rogok == 4 && aranyrogSzamlalo(palya) == 0)
                                 {
                                     rogok++;
                                 }
@@ -297,8 +313,14 @@ namespace Beadandó_KM
                                 this.y--;
                             }
                         }
-                        palya[JelenX][JelenY] = new Fold("F", 1, 1, JelenX, JelenY, true);
-                        palya[this.x][this.y] = this;
+                        try
+                        {
+                            palya[JelenX][JelenY] = new Fold("F", 1, 1, JelenX, JelenY, true);
+                            palya[this.x][this.y] = this;
+
+                        }
+                        catch
+                        { }
                         fut = false;
                         Console.Clear();
                         Console.WriteLine("Nyert a sheriff össze szedett rögök: " + rogok);

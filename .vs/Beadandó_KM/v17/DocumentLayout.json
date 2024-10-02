@@ -1,45 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\",
+  "WorkspaceRootPath": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\varos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\varos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|h:\\aaf\\beadand\u00F3_km\\git\\bankrablas\\beadand\u00F3_km\\sheriff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|h:\\aaf\\beadand\u00F3_git\\bankrablas\\beadand\u00F3_km\\sheriff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\sheriff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\bandita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\varos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\varos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\bandita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\bandita.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\varoselem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\varoselem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\varoselem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\varoshaza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\varoshaza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\varoshaza.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\whiskey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\whiskey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\whiskey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\aranyrog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\aranyrog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\aranyrog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\fold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\fold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\fold.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\beadand\u00F3_km\\barrikad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|H:\\AAf\\beadand\u00F3_git\\Bankrablas\\beadand\u00F3_km\\barrikad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{90311FDB-C159-450B-8180-4A052D8CCB52}|Beadand\u00F3_KM\\Beadand\u00F3_KM.csproj|solutionrelative:beadand\u00F3_km\\barrikad.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -50,17 +50,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Varos.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Varos.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Varos.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Varos.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Varos.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Varos.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Varos.cs",
-              "ViewState": "AgIAAEUBAAAAAAAAAAAqwFYBAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAGgBAAAAAAAAAAAtwHABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T07:05:36.999Z",
               "IsPinned": true,
@@ -68,13 +68,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Sheriff.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Sheriff.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Sheriff.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Sheriff.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Sheriff.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Sheriff.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Sheriff.cs",
-              "ViewState": "AgIAAMoAAAAAAAAAAAAcwBQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAuwLwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T09:53:55.628Z",
               "IsPinned": true,
@@ -84,9 +84,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Whiskey.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Whiskey.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Whiskey.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Whiskey.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Whiskey.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Whiskey.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Whiskey.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -96,9 +96,9 @@
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Barrikad.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Barrikad.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Barrikad.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Barrikad.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Barrikad.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Barrikad.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Barrikad.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -108,9 +108,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "Fold.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Fold.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Fold.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Fold.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Fold.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Fold.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Fold.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -118,23 +118,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Program.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Program.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Program.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Program.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Program.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T07:33:55.76Z"
+              "WhenOpened": "2024-09-24T07:33:55.76Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "VarosElem.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\VarosElem.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\VarosElem.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\VarosElem.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\VarosElem.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\VarosElem.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\VarosElem.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -144,21 +145,22 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Bandita.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Bandita.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Bandita.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Bandita.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Bandita.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Bandita.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Bandita.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAApwHAAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAtwGIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T07:10:05.252Z"
+              "WhenOpened": "2024-09-24T07:10:05.252Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Varoshaza.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Varoshaza.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Varoshaza.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Varoshaza.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Varoshaza.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Varoshaza.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Varoshaza.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAswBAAAACCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -168,9 +170,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "Aranyrog.cs",
-              "DocumentMoniker": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Aranyrog.cs",
+              "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Aranyrog.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Aranyrog.cs",
-              "ToolTip": "H:\\AAf\\Beadand\u00F3_KM\\git\\Bankrablas\\Beadand\u00F3_KM\\Aranyrog.cs",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Aranyrog.cs",
               "RelativeToolTip": "Beadand\u00F3_KM\\Aranyrog.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

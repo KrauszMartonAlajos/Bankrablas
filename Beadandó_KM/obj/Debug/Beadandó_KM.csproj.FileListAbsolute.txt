@@ -19,3 +19,10 @@ C:\Users\xboxh\Desktop\bankrablas\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM
 C:\Users\xboxh\Desktop\bankrablas\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.csproj.CoreCompileInputs.cache
 C:\Users\xboxh\Desktop\bankrablas\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.exe
 C:\Users\xboxh\Desktop\bankrablas\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.pdb
+H:\AAf\beadandó_git\Bankrablas\Beadandó_KM\bin\Debug\Beadandó_KM.exe.config
+H:\AAf\beadandó_git\Bankrablas\Beadandó_KM\bin\Debug\Beadandó_KM.exe
+H:\AAf\beadandó_git\Bankrablas\Beadandó_KM\bin\Debug\Beadandó_KM.pdb
+H:\AAf\beadandó_git\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.csproj.AssemblyReference.cache
+H:\AAf\beadandó_git\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.csproj.CoreCompileInputs.cache
+H:\AAf\beadandó_git\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.exe
+H:\AAf\beadandó_git\Bankrablas\Beadandó_KM\obj\Debug\Beadandó_KM.pdb
