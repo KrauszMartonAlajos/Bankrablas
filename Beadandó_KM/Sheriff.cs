@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Diagnostics;
 using System.Reflection;
+
 
 namespace Beadandó_KM
 {
@@ -279,53 +280,6 @@ namespace Beadandó_KM
                         vhX = mitlat[i][j].x;
                         vhY = mitlat[i][j].y;
                     }
-                    else if (rogok == 5 && vhX != -1 && vhY != -1)
-                    {
-                        int JelenX = this.x;
-                        int JelenY = this.y;
-
-                        int CelX = vhX;
-                        int CelY = vhY;
-
-                        int IranyX = CelX - JelenX;
-                        int IranyY = CelY - JelenY;
-
-                        if (Math.Abs(IranyX) > Math.Abs(IranyY))
-                        {
-                            if (IranyX > 0)
-                            {
-                                this.x++;
-                            }
-                            else
-                            {
-                                this.x--;
-                            }
-                        }
-                        else
-                        {
-
-                            if (IranyY > 0)
-                            {
-                                this.y++;
-                            }
-                            else
-                            {
-                                this.y--;
-                            }
-                        }
-                        try
-                        {
-                            palya[JelenX][JelenY] = new Fold("F", 1, 1, JelenX, JelenY, true);
-                            palya[this.x][this.y] = this;
-
-                        }
-                        catch
-                        { }
-                        fut = false;
-                        Console.Clear();
-                        Console.WriteLine("Nyert a sheriff össze szedett rögök: " + rogok);
-                    }
-
                     else if (mitlat[i][j] is Fold)
                     {
                         latottFoldek.Add((Fold)mitlat[i][j]);
@@ -333,7 +287,20 @@ namespace Beadandó_KM
                     }
                 }
             }
-            if (latottFoldek.Count > 0)
+            if (latottFoldek.Count > 0 && rogok == 5 && vhX!=-1 && vhY != -1)
+            {
+
+                //a legközelebbi földet kell választani a városházához
+                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
+                palya[this.x][this.y] = this;
+
+                Thread.Sleep(2000);
+                fut = false;
+                Console.Clear();
+                Console.WriteLine("Nyert a sheriff össze szedett rögök: " + rogok);
+
+            }
+            else if(latottFoldek.Count > 0)
             {
                 Fold valasztottFold = latottFoldek[r.Next(0, latottFoldek.Count)];
 

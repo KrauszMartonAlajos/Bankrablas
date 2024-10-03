@@ -63,8 +63,7 @@
               "ViewState": "AgIAAGgBAAAAAAAAAAAtwHABAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-24T07:05:36.999Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -72,13 +71,17 @@
               "Title": "Sheriff.cs",
               "DocumentMoniker": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Sheriff.cs",
               "RelativeDocumentMoniker": "Beadand\u00F3_KM\\Sheriff.cs",
-              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Sheriff.cs*",
-              "RelativeToolTip": "Beadand\u00F3_KM\\Sheriff.cs*",
-              "ViewState": "AgIAACkBAAAAAAAAAAAjwEIBAAAbAAAAAAAAAA==",
+              "ToolTip": "H:\\AAf\\beadand\u00F3_git\\Bankrablas\\Beadand\u00F3_KM\\Sheriff.cs",
+              "RelativeToolTip": "Beadand\u00F3_KM\\Sheriff.cs",
+              "ViewState": "AgIAADoBAAAAAAAAAAAswEUBAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-26T09:53:55.628Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
@@ -126,8 +129,7 @@
               "RelativeToolTip": "Beadand\u00F3_KM\\Program.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T07:33:55.76Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T07:33:55.76Z"
             },
             {
               "$type": "Document",
@@ -151,8 +153,7 @@
               "RelativeToolTip": "Beadand\u00F3_KM\\Bandita.cs",
               "ViewState": "AgIAAHIAAAAAAAAAAAAtwGIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T07:10:05.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T07:10:05.252Z"
             },
             {
               "$type": "Document",
