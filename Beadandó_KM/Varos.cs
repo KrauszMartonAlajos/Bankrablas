@@ -347,7 +347,9 @@ namespace Beadandó_KM
                     }
                 }
             }
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine(db+" db Whiskey van a pályán!");
+            Console.ResetColor();
         }
 
         public void banditaSzamlalo()
@@ -379,7 +381,9 @@ namespace Beadandó_KM
                     }
                 }
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(db + " db Aranyrog van a pályán!");
+            Console.ResetColor();
         }
 
         public void sherifflerak(Sheriff s)
@@ -507,17 +511,28 @@ namespace Beadandó_KM
                 Console.WriteLine();
             }
 
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(s.ToString());
-            Console.WriteLine("Megölt banditák száma: "+megoltbanditak);
-            Console.WriteLine("Felszedett aranyrögök száma: "+felszedettRogok);
-            Console.WriteLine("Banditáknál lévő rögök száma: "+ banditaknalLevoRogokSzama());
-            Console.WriteLine("Varosháza ismert koordinátái: " +s.vhX + " | " + s.vhY);
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Megölt banditák száma: " + megoltbanditak);
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Felszedett aranyrögök száma: " + felszedettRogok);
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Banditáknál lévő rögök száma: " + banditaknalLevoRogokSzama());
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Városháza ismert koordinátái: " + s.vhX + " | " + s.vhY);
+
             for (int i = 0; i < ismertWhiskeyk.Count; i++)
             {
-                Console.WriteLine("Whiskey " + (i + 1) + ". koordinátái: (" + ismertWhiskeyk[i].x + "," + ismertWhiskeyk[i].y+")");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("Whiskey " + (i + 1) + ". koordinátái: (" + ismertWhiskeyk[i].x + "," + ismertWhiskeyk[i].y + ")");
             }
-            //banditaInfo(3);
-            //SheriffInfo(1);
+
+            Console.ResetColor();
         }
     }
 }

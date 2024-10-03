@@ -40,7 +40,7 @@ namespace Beadandó_KM
                 palya.aranyrogSzamlalo();
                 palya.sheriffleptet(ref fut);
                 Console.WriteLine("Futások száma: "+futasokszama);
-                Thread.Sleep(1); 
+                Thread.Sleep(100); 
             }
             Console.ReadKey();
         }
