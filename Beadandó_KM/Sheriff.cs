@@ -289,15 +289,32 @@ namespace Beadandó_KM
             }
             if (latottFoldek.Count > 0 && rogok == 5 && vhX!=-1 && vhY != -1)
             {
+                Fold valasztottFold = null;
+                double legkisebbTavolsag = double.MaxValue;
 
-                //a legközelebbi földet kell választani a városházához
-                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
-                palya[this.x][this.y] = this;
+                for (int a = 0; a < latottFoldek.Count; a++)
+                {
+                    Fold jelenlegiFold = latottFoldek[a];
 
-                Thread.Sleep(2000);
-                fut = false;
-                Console.Clear();
-                Console.WriteLine("Nyert a sheriff össze szedett rögök: " + rogok);
+                    double tavolsag = Math.Sqrt(Math.Pow(jelenlegiFold.x - vhX, 2) + Math.Pow(jelenlegiFold.y - vhY, 2));
+
+                    if (tavolsag < legkisebbTavolsag)
+                    {
+                        legkisebbTavolsag = tavolsag;
+                        valasztottFold = jelenlegiFold;
+                    }
+                }
+
+                if (valasztottFold != null)
+                {
+                    palya[valasztottFold.x][valasztottFold.y] = this;
+                    palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
+
+                    this.x = valasztottFold.x;
+                    this.y = valasztottFold.y;
+                    Thread.Sleep(100);
+                }
+
 
             }
             else if(latottFoldek.Count > 0)
