@@ -51,7 +51,6 @@ namespace Beadandó_KM
             }
         }
 
-
         public bool mozdult = false;
 
 
@@ -98,7 +97,7 @@ namespace Beadandó_KM
             return db;
         }
 
-        public void sherifflep(ref int rogok, ref List<List<VarosElem>> palya, ref bool fut, ref List<Whiskey> ismertWhiskeyk, ref int megoltbanditak)
+        public void sherifflep(ref int rogok, ref List<List<VarosElem>> palya, ref bool fut, ref List<Whiskey> ismertWhiskeyk, ref int megoltbanditak, ref bool nyertE)
         {
             if (mozdult)
             {
@@ -112,6 +111,7 @@ namespace Beadandó_KM
             {
                 for (int j = 0; j < mitlat[i].Count; j++)
                 {
+                    //Aranyrögöt lát kezelése
                     if (mitlat[i][j] is Aranyrog)
                     {
                         int lepX = mitlat[i][j].x;
@@ -129,10 +129,11 @@ namespace Beadandó_KM
                     {
                         Thread.Sleep(1000);
                         fut = false;
+                        nyertE = false;
                         Console.Clear();
                         Console.WriteLine("Vesztett a sheriff mert megölték a banditák!");
                     }
-
+                    //Banditát lát kezelése
                     else if (mitlat[i][j] is Bandita)
                     {
                         int eredmeny = parbaj((Bandita)mitlat[i][j]);
@@ -140,6 +141,7 @@ namespace Beadandó_KM
                         {
                             Thread.Sleep(1000);
                             fut = false;
+                            nyertE = false;
                             Console.Clear();
                             Console.WriteLine("Vesztett a sheriff mert megölték a banditák");
                             return;
@@ -164,6 +166,8 @@ namespace Beadandó_KM
                         }
 
                     }
+
+                    //Whiskeyt lát kezelése
                     else if (mitlat[i][j] is Whiskey)
                     {
 
@@ -200,6 +204,8 @@ namespace Beadandó_KM
                             }
                         }
                     }
+
+                    //Városházát lát kezelése
                     else if (mitlat[i][j] is Varoshaza)
                     {
                         if (rogok == 5)
@@ -213,8 +219,9 @@ namespace Beadandó_KM
                             this.y = lepY;
                             Thread.Sleep(1000);
                             fut = false;
+                            nyertE = true;
                             Console.Clear();
-                            Console.WriteLine("Nyert a sheriff össze szedett rögök: " + rogok);
+                            Console.WriteLine("Nyert a sheriff össze szedete az összes aranyat!");
 
                         }
 
@@ -228,7 +235,7 @@ namespace Beadandó_KM
                     }
                 }
             }
-            //Város háza közelítés
+            //Város háza felé menés
             if (latottFoldek.Count > 0 && rogok == 5 && vhX != -1 && vhY != -1)
             {
                 Fold valasztottFold = null;
@@ -260,7 +267,7 @@ namespace Beadandó_KM
 
             }
 
-            //Whiskey közelítés
+            //Whiskey felé menés
             else if (latottFoldek.Count > 0 && this.hp < 60 && ismertWhiskeyk.Count > 0)
             {
                 Whiskey legkozelebbiWhiskey = null;
@@ -305,13 +312,15 @@ namespace Beadandó_KM
                 Thread.Sleep(100);
             }
 
+            //nem felfedezettek felé menés
+
             else if (latottFoldek.Count > 0 && !felfedezve)
             {
                 int felfedezettlenX = -1;
                 int felfedezettlenY = -1;
                 double minT = double.MaxValue;
 
-                for (int i = 0; i < palya.Count; i++) 
+                for (int i = 0; i < palya.Count; i++)
                 {
                     for (int j = 0; j < palya[i].Count; j++)
                     {
@@ -355,7 +364,61 @@ namespace Beadandó_KM
                 this.y = valasztottFold.y;
             }
 
+            //banditák kergetése
+            else if (rogok != 5 && felfedezve)
+            {
+                Bandita legkozelebbiBandita = null;
+                double minBTav = double.MaxValue;
 
+                for (int i = 0; i < palya.Count; i++)
+                {
+                    for (int j = 0; j < palya[i].Count; j++)
+                    {
+                        if (palya[i][j] is Bandita)
+                        {
+                            Bandita aktBandita = (Bandita)palya[i][j];
+                            double banditaTav = Math.Sqrt(Math.Pow(aktBandita.x - this.x, 2) + Math.Pow(aktBandita.y - this.y, 2));
+
+                            if (banditaTav < minBTav)
+                            {
+                                minBTav = banditaTav;
+                                legkozelebbiBandita = aktBandita;
+                            }
+                        }
+
+                    }
+
+                }
+
+                Fold valasztottFold = null;
+                double legkisebbTavolsag = double.MaxValue;
+
+                if (legkozelebbiBandita != null)
+                {
+                    for (int a = 0; a < latottFoldek.Count; a++)
+                    {
+                        Fold jelenlegiFold = latottFoldek[a];
+
+                        double tavolsag = Math.Sqrt(Math.Pow(jelenlegiFold.x - legkozelebbiBandita.x, 2) + Math.Pow(jelenlegiFold.y - legkozelebbiBandita.y, 2));
+
+                        if (tavolsag < legkisebbTavolsag)
+                        {
+                            legkisebbTavolsag = tavolsag;
+                            valasztottFold = jelenlegiFold;
+                        }
+                    }
+                }
+
+                palya[valasztottFold.x][valasztottFold.y] = this;
+                palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, true);
+
+                this.x = valasztottFold.x;
+                this.y = valasztottFold.y;
+                Thread.Sleep(100);
+            }
+
+
+            //random lépés
             else if (latottFoldek.Count > 0 && felfedezve)
             {
                 Fold valasztottFold = latottFoldek[r.Next(0, latottFoldek.Count)];

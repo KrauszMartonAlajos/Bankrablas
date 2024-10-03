@@ -243,7 +243,7 @@ namespace Beadandó_KM
 
         public int megoltbanditak = 0;
 
-        public void sheriffleptet(ref bool fut)
+        public void sheriffleptet(ref bool fut, ref bool nyertE)
         {
             for (int i = 0; i < palya.Count; i++)
             {
@@ -264,7 +264,7 @@ namespace Beadandó_KM
                         Sheriff s = (Sheriff)palya[i][j];
                         s.furkesz(ref palya);
                         sheriffFelfedez(s.x, s.y);
-                        s.sherifflep(ref felszedettRogok, ref palya, ref fut, ref ismertWhiskeyk, ref megoltbanditak);
+                        s.sherifflep(ref felszedettRogok, ref palya, ref fut, ref ismertWhiskeyk, ref megoltbanditak, ref nyertE);
                         sheriffFelfedez(s.x, s.y);
 
                     }
