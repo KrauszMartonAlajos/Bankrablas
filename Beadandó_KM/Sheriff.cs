@@ -268,7 +268,7 @@ namespace Beadandó_KM
             }
 
             //Whiskey felé menés
-            else if (latottFoldek.Count > 0 && this.hp < 60 && ismertWhiskeyk.Count > 0)
+            else if (latottFoldek.Count > 0 && this.hp < 51 && ismertWhiskeyk.Count > 0)
             {
                 Whiskey legkozelebbiWhiskey = null;
                 double minWTav = double.MaxValue;
