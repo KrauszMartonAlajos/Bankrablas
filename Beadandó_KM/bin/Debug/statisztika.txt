@@ -1,2 +1,2 @@
-Átlagos futás szám: 239
-Sheriff győzelmi arány: 87,8048780487805%
+Átlagos futás szám: 232
+Sheriff győzelmi arány: 86,046511627907%

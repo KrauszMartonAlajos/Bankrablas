@@ -396,7 +396,7 @@ namespace Beadandó_KM
                 int Xgen = r.Next(0, x);
                 int Ygen = r.Next(0, y);
                 s.x = Xgen;
-                s.y = Ygen; //it lehetett változtatni az értékét
+                s.y = Ygen;
                 if (palya[Xgen][Ygen] is Fold && tavolvane(Xgen, Ygen))
                 {
                     palya[Xgen][Ygen] = s;
@@ -460,37 +460,30 @@ namespace Beadandó_KM
                         nev = palya[i][j].nev;
                         if (nev == "F") //föld
                         {
-                            //Console.Write(nev);
                             Console.BackgroundColor = ConsoleColor.White;
                         }
                         else if (nev == "S") //sheriff
                         {
-                            //Console.Write(nev);
                             Console.BackgroundColor = ConsoleColor.Red;
                         }
                         else if (nev == "B") //Bandita
                         {
-                            //Console.Write(nev);
                             Console.BackgroundColor = ConsoleColor.DarkGray;
                         }
                         else if (nev == "W") //Whiskey
                         {
-                            //Console.Write(nev);
                             Console.BackgroundColor = ConsoleColor.DarkYellow;
                         }
                         else if (nev == "X") // Barrikád
                         {
-                            //Console.Write(nev);
                             Console.BackgroundColor = ConsoleColor.DarkMagenta;
                         }
                         else if (nev == "A") // Arany
                         {
-                            //Console.Write(nev);
                             Console.BackgroundColor = ConsoleColor.Yellow;
                         }
                         else if (nev == "H") // Városháza
                         {
-                            //Console.Write(nev);
                             Console.BackgroundColor = ConsoleColor.Blue;
                         }
                         else

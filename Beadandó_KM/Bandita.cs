@@ -108,7 +108,6 @@ namespace Beadandó_KM
             }
             if (latottFoldek.Count > 0)
             {
-                //ha felfedezett részről lép felfedezetlenbe akkor a felfedezett rész ahonnan lép felfedezetlen lesz !!!!!!!!!!!!!
                 Fold valasztottFold = latottFoldek[random.Next(0, latottFoldek.Count)];
 
                 bool fel = palya[this.x][this.y].felfedezett;
@@ -127,11 +126,7 @@ namespace Beadandó_KM
 
                 palya[this.x][this.y] = new Fold("F", 1, 1, this.x, this.y, fel);
 
-                // ide lép
                 palya[valasztottFold.x][valasztottFold.y] = this;
-
-                
-                
 
                 this.x = valasztottFold.x;
                 this.y = valasztottFold.y;
